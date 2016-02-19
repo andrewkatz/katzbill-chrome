@@ -1,0 +1,18 @@
+.col-md-12
+  .btn-group.pull-right
+    if payment.url
+      button.btn.btn-default{action "openURL"}
+        i.fa.fa-external-link
+    button.btn.btn-default{action "edit"}
+      i.fa.fa-pencil
+    button.btn.btn-default{action "pay"} disabled=isPaying
+      if isPaying
+        i.fa.fa-spin.fa-circle-o-notch
+      else
+        if isBill
+          i.fa.fa-check.bill
+        else
+          i.fa.fa-usd.paycheck
+  .name= payment.name
+  .due: format-date payment.nextPayDate monthDay=true
+  .days-left= friendlyDaysLeft

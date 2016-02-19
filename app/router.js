@@ -6,6 +6,8 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('pay', { path: 'pay/:id' });
+  this.route('unauthorized');
 });
 
 export default Router;

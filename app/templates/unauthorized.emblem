@@ -1,0 +1,6 @@
+.container
+  .row
+    .col-md-12
+      p.text-center
+        ' You need to
+        a{action "signIn"} href="#" sign in and stuff.

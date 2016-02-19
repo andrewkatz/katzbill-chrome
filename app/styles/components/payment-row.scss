@@ -1,0 +1,38 @@
+.payment-row {
+  background: $white;
+  padding: 10px 0;
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+
+  &.bill {
+    border-left: 5px solid $cyan;
+  }
+
+  &.paycheck {
+    border-left: 5px solid $green;
+  }
+
+  i.bill {
+    color: $cyan;
+  }
+
+  i.paycheck {
+    color: $green;
+  }
+
+  .name {
+  }
+
+  .due {
+    color: $gray;
+    font-size: 12px;
+  }
+
+  .days-left {
+    color: $medium-gray;
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+}

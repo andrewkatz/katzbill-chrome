@@ -6,6 +6,11 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    contentSecurityPolicy: {
+      'connect-src': `'self' http://localhost:3000`,
+      'style-src': `'self' http://fonts.googleapis.com`,
+      'font-src': `'self' http://fonts.gstatic.com`
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -25,6 +30,9 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.apiURL = 'http://localhost:3000';
+    ENV.APP.ssl = false;
+    ENV.APP.cookieDomain = 'localhost';
   }
 
   if (environment === 'test') {
@@ -40,7 +48,9 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.APP.apiURL = 'http://www.billsandstuff.com';
+    ENV.APP.ssl = false;
+    ENV.APP.cookieDomain = 'billsandstuff.com';
   }
 
   return ENV;

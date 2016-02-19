@@ -1,0 +1,25 @@
+.btn {
+  border-radius: 0;
+
+  &.btn-default {
+    background-color: $white;
+    border-color: $white;
+    color: $gray;
+    min-width: 43px;
+
+    &:hover {
+      background-color: $lightest-gray;
+      border-color: $lightest-gray;
+    }
+  }
+
+  &.btn-success {
+    background-color: $green;
+    border-color: $green;
+
+    &:hover {
+      background-color: darken($green, 5%);
+      border-color: darken($green, 5%);
+    }
+  }
+}
