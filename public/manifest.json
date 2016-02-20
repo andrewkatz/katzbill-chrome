@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "katzbill-chrome",
-  "description": "Small description for katzbill-chrome goes here",
-  "version": "0.0.0",
+  "name": "Bills & Stuff",
+  "description": "Makes it easier to track your bills and stuff.",
+  "version": "0.0.1",
   "icons": {
     "128": "chrome-icon-lg.png"
   },
