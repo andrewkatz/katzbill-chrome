@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ember serve --port 4300

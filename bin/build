@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set +e
+
+ember build --environment production
+pushd dist
+zip -r app.zip *
+popd
