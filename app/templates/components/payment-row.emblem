@@ -1,5 +1,8 @@
 .col-md-12
   .btn-group.pull-right
+    if payment.autopay
+      button.btn.btn-default disabled=true
+        i.fa.fa-magic
     if payment.url
       button.btn.btn-default{action "openURL"}
         i.fa.fa-external-link
