@@ -26,7 +26,9 @@ export default Ember.Component.extend({
 
       return {
         title: title,
-        payments: payments
+        payments: _.sortBy(payments, function(payment) {
+          return moment(payment.get('nextPayDate'));
+        })
       };
     });
   }),

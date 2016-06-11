@@ -4,13 +4,9 @@ import ajax from 'ic-ajax';
 
 export default Ember.Route.extend({
   beforeModel() {
-    console.log('authenticated befor emodel');
-
-    ajax(`${ENV.APP.apiURL}/me`, {
-      accepts: 'json',
-    })
-    .catch((e) => {
-      if (e.jqXHR.status === 401) {
+    return ajax(`${ENV.APP.apiURL}/me.json`)
+    .then(() => {}, (error) => {
+      if (error.jqXHR.status === 401) {
         this.transitionTo('unauthorized');
       }
     });

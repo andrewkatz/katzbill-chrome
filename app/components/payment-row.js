@@ -31,11 +31,13 @@ export default Ember.Component.extend({
 
   actions: {
     openURL() {
+      const paymentId = this.get('payment.id');
       const paymentURL = this.get('payment.url');
-      const cookieValue = `${this.get('payment.id')}::::${paymentURL}`;
 
-      this.get('cookieMonster').setCookie('katzbill_pay', cookieValue);
-      this.get('windowManager').openExternalTab(paymentURL);
+      this.get('windowManager').openExternalTab(paymentURL, (tab) => {
+        const cookieValue = `${paymentId}::::${tab.id}`;
+        this.get('cookieMonster').setCookie('katzbill_pay', cookieValue);
+      });
     },
 
     edit() {

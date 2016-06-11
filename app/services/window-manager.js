@@ -2,28 +2,20 @@ import Ember from 'ember';
 import ENV from 'katzbill-chrome/config/environment';
 
 export default Ember.Service.extend({
-  isChrome: Ember.computed(function() {
-    return Ember.isPresent(chrome.create);
-  }),
-
   openInternalTab(path) {
     this.openTab(this.resolveURL(path, 'internal'));
   },
 
-  openExternalTab(path) {
-    this.openTab(this.resolveURL(path, 'external'));
+  openExternalTab(path, callback) {
+    this.openTab(this.resolveURL(path, 'external'), callback);
   },
 
   openExtensionTab(path) {
     this.openTab(this.resolveURL(path, 'extension'));
   },
 
-  openTab(url) {
-    if (this.get('isChrome')) {
-      chrome.tabs.create({ url: url });
-    } else {
-      window.open(url);
-    }
+  openTab(url, callback) {
+    chrome.tabs.create({ url: url }, callback);
   },
 
   resolveURL(path, urlType) {
