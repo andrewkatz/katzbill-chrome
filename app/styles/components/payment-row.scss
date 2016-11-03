@@ -1,5 +1,6 @@
 .payment-row {
   background: $white;
+  border-bottom: 1px solid $lightest-gray;
   padding: 10px 0;
 
   &:last-of-type {
@@ -27,12 +28,16 @@
 
   .due {
     color: $gray;
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .days-left {
     color: $medium-gray;
-    font-size: 11px;
+    font-size: 13px;
     text-transform: uppercase;
+  }
+
+  .payment-actions {
+    margin-top: 16px;
   }
 }

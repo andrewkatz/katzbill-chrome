@@ -1,5 +1,5 @@
 .col-md-12
-  .btn-group.pull-right
+  .payment-actions.btn-group.pull-right
     if payment.autopay
       button.btn.btn-default disabled=true
         i.fa.fa-magic
