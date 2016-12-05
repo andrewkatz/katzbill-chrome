@@ -8,10 +8,10 @@ export default Ember.Component.extend({
 
   groupedPayments: Ember.computed('payments.@each.nextPayDate', function() {
     const grouped = _.groupBy(this.get('payments').toArray(), function(payment) {
-      return moment(payment.get('nextPayDate')).month();
+      return moment(payment.get('nextPayDate')).format('YYYYMM');
     });
 
-    const months = Object.keys(grouped);
+    const months = _.sortBy(Object.keys(grouped), function(m) { return m; });
     return _.map(months, function(month) {
       const payments = grouped[month];
       const firstPayment = payments[0];
