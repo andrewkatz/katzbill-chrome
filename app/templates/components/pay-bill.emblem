@@ -2,9 +2,9 @@
   .row
     .col-md-12.text-center
       p.done-paying
-        ' Are you done paying "
-        = payment.name
-        | "?
+        ' Are you done paying
+        strong= payment.name
+        | ?
       button.btn.btn-default.btn-lg{action "no"} No
       button.btn.btn-success.btn-lg{action "yes"}
         if isPaying
